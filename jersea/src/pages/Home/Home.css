@@ -1,0 +1,164 @@
+
+.main-content{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap:2rem;
+    font-family:var(--font);
+}
+
+.grid4-container{
+    margin-top:3rem;
+    padding:0rem 4rem;
+}
+
+.grid4-title{
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    font-size:2.5rem;
+    margin: 0.5rem 0rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.grid-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.grid-4-item{
+    height: 15rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.25rem;
+    background-color: var(--primary-color);
+    color:var(--text-color);
+    position: relative;
+}
+
+.grid-4-image{
+    width: 100%;
+    height: 100%;
+}
+
+.grid-4-image-caption{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color:var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+    background-color: var(--text-color);
+    padding:2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.grid-4-image-caption:hover{
+    display:none;
+}
+
+.grid1-container{
+    position: relative;
+}
+
+.grid1-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size:2rem;
+    padding: 0.5rem;
+    color: var(--primary-color);
+    position: absolute;
+    bottom:1rem;
+    background-color: var(--text-color);
+}
+
+.grid-1{
+    width: 100%;
+    background-color:var(--primary-color);
+    height: 30rem;
+    background-image: url('https://www.realmadrid.com/img/horizontalsc_940px/home-jersey_group_alluse2_20190607095934.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid-1-shopbtn{
+    width: 10rem;
+    height:2.5rem;
+    font-size: 1.2rem;
+    color:var(--primary-color);
+    background-color: var(--text-color);
+    border:0.1rem solid var(--primary-color);
+    outline:none;
+    cursor: pointer;
+    margin:1rem 3rem;
+}
+
+.grid-1-shopbtn:hover{
+    border:0.1rem solid var(--text-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem 3rem;
+
+}
+
+.grid-2-item-container{
+    height: 20rem;
+    background-color:var(--primary-color);
+    margin-bottom: 1rem;
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 1rem;
+    gap: 2rem;
+    color: var(--text-color);
+}
+
+.grid-2-item{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grid-2-title{
+    font-size:2.5rem;
+}
+
+.grid-2-description{
+    font-size:1.75rem;
+}
+
+
+.grid-2-img-resp{
+    width: 100%;
+    height:100%;
+}
+
+.grid-2-shopbtn{
+    width: 10rem;
+    height:2.5rem;
+    font-size: 1.2rem;
+    color:var(--primary-color);
+    background-color: var(--text-color);
+    outline:none;
+    border: none;
+    cursor: pointer;
+}
+
+.grid-2-shopbtn:hover{
+    border:0.1rem solid var(--text-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
