@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');:root{
+    --primary-color:#024991;
+    --text-color:white;
+    --text-black:#000000;
+    --text-secondary:#757878;
+
+    --font:'KoHo', sans-serif;
+    --heart-fill-red:red;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
