@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.ecom-filter{
+    width: 15rem;
+    height:100vh;
+    padding:1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    color: var(--primary-color);
+    position:sticky;
+    top: 0;
+}
+
+.ecom-filter-header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    font-size:1.25rem;
+}
+
+.ecom-filter-price{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0rem;
+}
+
+.ecom-filter-category,.ecom-filter-rating,.ecom-filter-sort{
+    margin: 1rem 0rem;
+}
+.filter-label{
+    margin:0.3rem;
+}
