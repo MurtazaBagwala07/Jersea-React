@@ -39,3 +39,7 @@
 .filter-label{
     margin:0.3rem;
 }
+
+.ecom-filter-clear{
+    cursor: pointer;
+}
