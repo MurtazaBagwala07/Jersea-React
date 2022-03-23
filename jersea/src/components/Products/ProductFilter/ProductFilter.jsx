@@ -4,7 +4,6 @@ import { useData } from '../../../hooks';
 
 export const ProductFilter=()=>{
     const {state,dispatch} =useData();
-    console.log(state.filter.priceRange)
     return(
         <aside className="ecom-filter flex-column">
         <div className="ecom-filter-header">
