@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductPage.css'
-import {ProductList,ProductFilter} from '../../components/index'
+import {ProductList,ProductFilter} from '../../components'
 
 export const ProductPage=()=>{
     return(
