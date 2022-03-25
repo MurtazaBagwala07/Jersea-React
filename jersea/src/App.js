@@ -1,5 +1,5 @@
 import "./App.css";
-import {Home,ProductPage} from './pages/index'
+import {Home,ProductPage, SignIn,SignUp} from './pages/index'
 import { Header } from "./components/index";
 import { Routes, Route } from 'react-router-dom';
 import Mockman from 'mockman-js'
@@ -20,6 +20,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/products' element={<ProductPage/>}/>
+      <Route path='/sign-in' element={<SignIn/>} />
+      <Route path='/sign-up' element={<SignUp/>}/>
       <Route path='/mockman' element={<MockAPI/>} />
     </Routes>
     </>
