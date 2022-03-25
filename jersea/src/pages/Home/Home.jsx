@@ -1,5 +1,6 @@
 import './Home.css';
 import '../css/main.css';
+import { Link } from 'react-router-dom';
 
 export function Home(){
     return(
@@ -16,8 +17,10 @@ export function Home(){
                         <span className="grid-4-image-caption">Real-Madrid</span>
                     </div>
                     <div className="grid-4-item">
+                        <Link to='/products'>
                         <img className="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
                         <span className="grid-4-image-caption">Real-Madrid</span>
+                        </Link>
                     </div>
                     <div className="grid-4-item">
                         <img className="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />

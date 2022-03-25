@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../pages/css/main.css'
 import { useAuth } from '../../hooks';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 
 export const Header=()=>{
@@ -26,10 +26,12 @@ export const Header=()=>{
             <div className="ecom-nav-action-btns">
                 {!auth.isAuth && <button className="ecom-nav-action-btn nav-btn-login">Login</button>}
                 {auth.isAuth && <button onClick={LogOutHandler} className="ecom-nav-action-btn nav-btn-login">Log Out</button>}
+                <Link to="/wishlist">
                 <div className="ecom-nav-action-btn badge">
                     <i class="fas fa-shopping-cart ecom-nav-icon"></i>
                     <span className="badge-number">6</span>
                 </div>
+                </Link>
             
                 <div className="ecom-nav-action-btn badge">
                     <i class="fas fa-heart ecom-nav-icon"></i>
