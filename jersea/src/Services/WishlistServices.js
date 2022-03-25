@@ -15,3 +15,21 @@ export const GetWishlistService=async(token)=>{
         console.log(error)
     }
 }
+
+export const AddToWishlistCall=async(product,token)=>{
+    console.log(product,token)
+    const response= await axios.post(
+		"/api/user/wishlist",
+		{ product },
+		{ headers: { authorization: token } }
+	);
+    return response
+}
+
+
+export const RemoveFromWishlistCall=async(id,token)=>{
+    const response= axios.delete(`/api/user/wishlist/${id}`, {
+		headers: { authorization: token },
+	});
+    return response
+}

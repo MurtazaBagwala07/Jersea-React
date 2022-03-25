@@ -1,2 +1,2 @@
 export {LoginService,SignUpService} from './AuthServices'
-export {GetWishlistService} from './WishlistServices'
+export {GetWishlistService,AddToWishlistCall,RemoveFromWishlistCall} from './WishlistServices'
