@@ -1,0 +1,64 @@
+.sign-up-page{
+    height: 80vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family:var(--font);
+}
+
+.sign-in-container{
+    width: 24rem;
+    background-color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:flex-start;
+    padding: 2rem 4rem;
+    height: 24rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.sign-in-title{
+    align-self: center;
+}
+
+.sign-in-email,.sign-in-password,.sign-in-login,.sign-in-create{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sign-in-action{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size: 0.85rem;
+}
+
+.sign-in-btn{
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    height:1.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.sign-in-login{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    
+}
+
+.sign-in-create{
+    background-color:transparent;
+}
+
+.anchor-reset{
+    color: inherit;
+    text-decoration: none;
+}
