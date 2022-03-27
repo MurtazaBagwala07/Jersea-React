@@ -1,0 +1,118 @@
+.cart-main{
+    margin:2rem 10rem;;
+    padding:0rem 4rem;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-family:var(--font);
+}
+
+.cart-title{
+    font-size:2rem;
+    font-weight:bolder;
+    color: var(--primary-color);
+}
+
+.cart-container{
+    display: flex;
+    flex-direction:row;
+    height:20rem;
+    width:100%;
+    margin:1rem;
+    gap:2rem;
+}
+
+.cart-products{
+    display: flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.card-detailed{
+    height:20rem;
+    width:35rem;
+    background-color:var(--text-color);
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 1rem;
+    border:2px solid var(--primary-color);
+}
+
+.cart-detailed-img{
+    height:100%;
+    width: 100%;
+}
+
+.card-detailed-container{
+    margin-left:1rem;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    gap:0.5rem;
+}
+
+.card-detailed-quantity{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-detailed-action-btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-detailed-title{
+    font-size:1.5rem;
+}
+
+.card-detailed-price{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prod-sell-price{
+    font-size: 1.75rem;
+    font-weight:600;
+}
+
+.prod-total-price{
+    font-size:1.5rem;
+    text-decoration: line-through;
+}
+
+.card-detailed-discount{
+    font-size:1.25rem;
+}
+
+.prod-quantity{
+    width:1.5rem;
+    height:1.25rem;
+}
+
+.card-detailed-action-btns{
+    display: flex;
+    flex-direction:column;
+    gap:0.5rem;
+    justify-self: flex-end;
+}
+
+.card-detailed-action-btn{
+    height:1.9rem;
+    outline:none;
+    border: none;
+    background-color:var(--primary-color);
+    color: var(--text-color);
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.card-detailed-action-btn:hover{
+    border: 0.1rem solid var(--primary-color);
+    color:var(--primary-color);
+    background-color: var(--text-color)
+}
+
