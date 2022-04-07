@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../pages/css/main.css'
+import './Header.css'
 import { useAuth } from '../../hooks';
 import { useNavigate,Link } from "react-router-dom";
 import{useCart,useWishlist} from '../../hooks'
@@ -27,21 +28,17 @@ export const Header=()=>{
         
             <div className="ecom-nav-action-btns">
                 {!auth.isAuth && <button className="ecom-nav-action-btn nav-btn-login">Login</button>}
-                {auth.isAuth && <button onClick={LogOutHandler} className="ecom-nav-action-btn nav-btn-login">Log Out</button>}
+                {auth.isAuth && <button onClick={LogOutHandler} className="ecom-nav-action-btn nav-btn-login"><i class="fas fa-sign-out-alt"></i></button>}
                 
-                <Link to="/cart">
-                    <div className="ecom-nav-action-btn badge">
+                    <div onClick={()=>navigate('/cart')} className="ecom-nav-action-btn badge">
                         <i class="fas fa-shopping-cart ecom-nav-icon"></i>
                         <span className="badge-number">{cart.cart.length}</span>
                     </div>
-                </Link>
             
-                <Link to="/wishlist">
-                    <div className="ecom-nav-action-btn badge">
+                    <div onClick={()=>navigate('/wishlist')} className="ecom-nav-action-btn badge">
                         <i class="fas fa-heart ecom-nav-icon"></i>
                         <span className="badge-number">{wishlist.wishlist.length}</span>
                     </div>
-                </Link>
             </div>
         </nav>
     )

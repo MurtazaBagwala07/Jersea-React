@@ -1,5 +1,6 @@
 export const initialState={
-    products:[], 
+    products:[],
+    category:[], 
     filter:{
         sortBy:'',
         rating:'',
@@ -19,6 +20,9 @@ export const DataReducer=(state,action) =>{
     switch (action.type) {
         case 'LOAD_PRODUCTS':
             return {...state,products:action.payload}
+
+        case 'LOAD_CATEGORIES':
+            return {...state,category:action.payload}
             
         case 'FILTER_DATA' :
             return {...state,filter:{...state.filter,[action.payload.filterName]:action.payload.filterValue}}

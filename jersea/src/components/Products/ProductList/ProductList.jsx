@@ -17,7 +17,6 @@ export const ProductList=()=>{
     filteredData=stockCheck([...filteredData],state.filter.inStock)
     filteredData=categoryData([...filteredData],state.filter.categories)
     filteredData=priceControl([...filteredData],state.filter.priceRange)
-    // console.log(filteredData)
 
     
 

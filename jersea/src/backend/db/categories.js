@@ -14,7 +14,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Seria-A",
+    categoryName: "Serie-A",
     description:
       "",
   },

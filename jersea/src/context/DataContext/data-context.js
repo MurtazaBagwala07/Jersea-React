@@ -18,6 +18,20 @@ export const DataProvider = ({children})=>{
                 console.log(error)
             }
         })();
+        (async()=>{
+            try {
+                const resp = await axios.get('/api/categories')
+                console.log(resp)
+                const {categories}=  resp.data;
+                console.log(categories)
+                dispatch({
+                    type: 'LOAD_CATEGORIES',
+                    payload : categories
+                })
+            } catch (error) {
+                console.log(error)
+            }
+        })();
     },[])
     return(
     <DataContext.Provider value={{state,dispatch}}>
