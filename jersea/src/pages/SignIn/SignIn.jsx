@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export const SignIn = () => {
 
-    const navigation = useNavigate();
+    const navigate = useNavigate();
     const {auth,setAuth} = useAuth();
     const [signIn,setSignIn]=useState({
         email:'',
@@ -22,7 +22,7 @@ export const SignIn = () => {
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
             setAuth({...auth, token:token,isAuth:true});
-            navigation("/")
+            navigate("/")
         }
     }
 
@@ -33,7 +33,7 @@ export const SignIn = () => {
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
             setAuth({...auth, token:token,isAuth:true});
-            navigation("/")
+            navigate("/")
         }
     }
 
@@ -59,7 +59,7 @@ export const SignIn = () => {
             </div>
             <button onClick={(e)=>LoginHandler(e)} className="sign-in-login sign-in-btn">Login</button>
             <button onClick={(e)=>GuestLogin(e)} className="sign-in-login sign-in-btn">Login with test credentials</button>
-            <p className="sign-in-create sign-in-btn">Create Account</p>
+            <p onClick={()=>navigate('/sign-up')} className="sign-in-create sign-in-btn">Create Account</p>
         </form>
     </main>
   )
