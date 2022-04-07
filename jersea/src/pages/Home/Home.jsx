@@ -1,31 +1,42 @@
 import './Home.css';
 import '../css/main.css';
-import { Link } from 'react-router-dom';
+import { useData } from '../../hooks';
+import {useNavigate} from 'react-router-dom'
 
 export function Home(){
+    const {state,dispatch} = useData();
+    const navigate = useNavigate();
+    
+
+    const categoryHandler=(cat)=>{
+        const newFilter = {
+            'Laliga':false,
+            'Premier League':false,
+            'Serie-A':false,
+            'Ligue-1':false,
+        }
+        dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:newFilter}})
+        dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:{...state.filter.categories,[cat.categoryName]:true}}})
+        navigate('/products')
+
+    }
+
     return(
         <main className="main-content">
             <div className="grid4-container">
                 <div className="grid4-title">Wear jerseys of the best clubs</div>
                 <div className="grid-4">
-                    <div class="grid-4-item">
-                        <img class="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
-                        <span class="grid-4-image-caption">Real-Madrid</span>
-                    </div>
-                    <div className="grid-4-item">
-                        <img className="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
-                        <span className="grid-4-image-caption">Real-Madrid</span>
-                    </div>
-                    <div className="grid-4-item">
-                        <Link to='/products'>
-                        <img className="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
-                        <span className="grid-4-image-caption">Real-Madrid</span>
-                        </Link>
-                    </div>
-                    <div className="grid-4-item">
-                        <img className="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
-                        <span className="grid-4-image-caption">Real-Madrid</span>
-                    </div>
+                    {
+                        state.category.map((cat)=>{
+                            return(
+                                <div onClick={()=>categoryHandler(cat)} class="grid-4-item">
+                                <img class="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
+                                <span class="grid-4-image-caption">{cat.categoryName}</span>
+                            </div>
+                            )
+                        })
+                    }
+                    
                 </div>
             </div>
             <div className="grid1-container">

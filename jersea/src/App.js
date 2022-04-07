@@ -1,5 +1,6 @@
 import "./App.css";
 import {Home,ProductPage, SignIn,SignUp,Wishlist,Cart} from './pages/index'
+import {useAuth} from './hooks'
 import { Header } from "./components/index";
 import { Routes, Route } from 'react-router-dom';
 import Mockman from 'mockman-js'
@@ -14,6 +15,9 @@ function MockAPI() {
 }
 
 function App() {
+
+  const {auth} = useAuth()
+
   return (
     <>
     <Header/>
@@ -23,8 +27,8 @@ function App() {
       <Route path='/sign-in' element={<SignIn/>} />
       <Route path='/sign-up' element={<SignUp/>}/>
       <Route path='/mockman' element={<MockAPI/>} />
-      <Route path='/wishlist' element={<Wishlist/>}/>
-      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/wishlist' element={auth.isAuth?<Wishlist/>:<SignIn/>}/>
+      <Route path='/cart' element={auth.isAuth?<Cart/>:<SignIn/>}/>
     </Routes>
     </>
   );

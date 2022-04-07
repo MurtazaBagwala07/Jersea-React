@@ -25,6 +25,19 @@ export const SignIn = () => {
             navigation("/")
         }
     }
+
+    const GuestLogin =async(e)=>{
+        e.preventDefault();
+        const token =  await LoginService('adarshbalika@gmail.com','adarshbalika')
+        if(token){
+            localStorage.setItem("token", token);
+		    localStorage.setItem("isAuth", true);
+            setAuth({...auth, token:token,isAuth:true});
+            navigation("/")
+        }
+    }
+
+
   return (
     <main className="sign-in-page">
         <form className="sign-in-container">
@@ -45,6 +58,7 @@ export const SignIn = () => {
                 <a className="anchor-reset" href="#">Forgot you password?</a>
             </div>
             <button onClick={(e)=>LoginHandler(e)} className="sign-in-login sign-in-btn">Login</button>
+            <button onClick={(e)=>GuestLogin(e)} className="sign-in-login sign-in-btn">Login with test credentials</button>
             <p className="sign-in-create sign-in-btn">Create Account</p>
         </form>
     </main>
