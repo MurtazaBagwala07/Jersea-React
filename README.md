@@ -5,6 +5,16 @@ An Ecommerce Store to shop football jerseys.
 ## Tech Stack
 React JS 
 
+## Pages
+
+* SignIn Page
+* SignUp Page
+* Cart Page
+* Wishlist Page
+* Home Page
+* Product Page
+
+
 ## Screenshots
 ![Screenshot 2022-04-07 163508](https://user-images.githubusercontent.com/75979676/162187621-0ea27093-0e42-4253-bb87-b0e96f186792.png)
 ![Screenshot 2022-04-07 164930](https://user-images.githubusercontent.com/75979676/162187638-7be83fff-aeba-4c7e-8eae-f07d0f92615b.png)
