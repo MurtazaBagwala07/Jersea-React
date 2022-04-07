@@ -30,7 +30,7 @@ export function Home(){
                         state.category.map((cat)=>{
                             return(
                                 <div onClick={()=>categoryHandler(cat)} class="grid-4-item">
-                                <img class="grid-4-image" src="https://imageio.forbes.com/specials-images/imageserve/5fd148842c66ab6967c0b012/Real-Madrid-v-Borussia-Moenchengladbach--Group-B---UEFA-Champions-League/960x0.jpg?fit=bounds&format=jpg&width=960" alt="realmadrid-img" />
+                                <img class="grid-4-image" src={cat.img} alt="img" />
                                 <span class="grid-4-image-caption">{cat.categoryName}</span>
                             </div>
                             )
@@ -41,7 +41,7 @@ export function Home(){
             </div>
             <div className="grid1-container">
                 <div className="grid1-title">Real Madrid 2017-18 Special Edition
-                    <button className="grid-1-shopbtn">Buy Now</button>
+                    <button onClick={()=>navigate('/products')} className="grid-1-shopbtn">Buy Now</button>
                 </div>
                 <div className="grid-1">
                 </div>
@@ -58,7 +58,7 @@ export function Home(){
                         <div className="grid-2-description">
                             Inter Milan 2020-21 Home kit
                         </div>
-                        <button className="grid-2-shopbtn">Shop Now</button>
+                        <button onClick={()=>navigate('/products')} className="grid-2-shopbtn">Shop Now</button>
                     </div>
                 </div>
                 <div className="grid-2-item-container">
@@ -72,7 +72,7 @@ export function Home(){
                         <div className="grid-2-description">
                             Real Betis 2020-21 Home kit
                         </div>
-                        <button className="grid-2-shopbtn">Shop Now</button>
+                        <button onClick={()=>navigate('/products')} className="grid-2-shopbtn">Shop Now</button>
                     </div>
                 </div>
             </div>

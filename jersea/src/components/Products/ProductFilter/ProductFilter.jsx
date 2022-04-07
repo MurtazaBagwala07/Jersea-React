@@ -13,6 +13,7 @@ export const ProductFilter=()=>{
         <div className="ecom-filter-price">
             <label for="price">Price</label>
             <input onChange={(e)=>dispatch({type:'FILTER_DATA', payload:{filterName:'priceRange',filterValue:e.target.value}})} min='0' step='500' value={state.filter.priceRange} max='5500' type="range"/>
+            <span>{state.filter.priceRange}</span>
         </div>
         <div className="ecom-filter-category flex-column">
             <p for="category">Category</p>

@@ -56,7 +56,7 @@ export const SignUp = () => {
                 </div>
             </div>
             <button onClick={(e)=>signUpHandler(e)} className="sign-in-login sign-in-btn">Sign Up</button>
-            <p className="sign-in-create sign-in-btn">Already have a account</p>
+            <p onClick={()=>navigate('/sign-in')} className="sign-in-create sign-in-btn">Already have a account</p>
         </div>
     </form>
   )
