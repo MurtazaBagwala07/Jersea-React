@@ -27,7 +27,7 @@ export const Header=()=>{
             </div>
         
             <div className="ecom-nav-action-btns">
-                {!auth.isAuth && <button className="ecom-nav-action-btn nav-btn-login">Login</button>}
+                {!auth.isAuth && <button onClick={()=>navigate('/sign-in')} className="ecom-nav-action-btn nav-btn-login">Login</button>}
                 {auth.isAuth && <button onClick={LogOutHandler} className="ecom-nav-action-btn nav-btn-login"><i class="fas fa-sign-out-alt"></i></button>}
                 
                     <div onClick={()=>navigate('/cart')} className="ecom-nav-action-btn badge">
