@@ -1,5 +1,4 @@
 import React,{createContext,useEffect,useState} from 'react';
-import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -11,7 +10,6 @@ export const AuthProvider =({children})=>{
 		if (token) setAuth({ token, isAuth: true });
         else setAuth(initialAuth);
     },[])
-    console.log(auth)
     return(
         <AuthContext.Provider value={{auth,setAuth,initialAuth}}>
             {children}

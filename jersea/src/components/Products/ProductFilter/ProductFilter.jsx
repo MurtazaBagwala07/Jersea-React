@@ -28,7 +28,7 @@ export const ProductFilter=()=>{
             className="filter-label" type="checkbox"/>Premier League</label>
             
             <label for="league"><input 
-            checked={state.filter.categories['Seria-A']}
+            checked={state.filter.categories['Serie-A']}
             onChange={()=>{dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:{...state.filter.categories,'Serie-A':!state.filter.categories['Serie-A']}}})}} 
             className="filter-label" type="checkbox"/>Serie-A</label>
             

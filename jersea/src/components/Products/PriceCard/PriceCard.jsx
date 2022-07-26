@@ -1,10 +1,10 @@
 import React from 'react'
 import './PriceCard.css'
-import {useCart} from '../../../hooks'
+import {useData} from '../../../hooks'
 
 export const PriceCard = () => {
-    const {cart} =useCart();
-    const totalPrice=cart.cart.reduce((acc,curr)=>acc+curr.price*curr.qty,0)
+    const {state} =useData();
+    const totalPrice=state.cart.reduce((acc,curr)=>acc+curr.price*curr.qty,0)
     const deliveryCharges = 200;
     const finalPrice = totalPrice+deliveryCharges;
   return (

@@ -12,8 +12,9 @@ export const initialState={
             'Serie-A':false,
             'Ligue-1':false,
         },
+        cart:[],
+        wishlist:[],
     }
-
 }
 
 export const DataReducer=(state,action) =>{
@@ -42,6 +43,12 @@ export const DataReducer=(state,action) =>{
                         },
                     }
         }
+
+        case 'CART_DATA':
+            return {...state,cart:action.payload}
+
+        case 'WISHLIST_DATA':
+            return {...state,wishlist:action.payload}
         
          default:
              return state;
