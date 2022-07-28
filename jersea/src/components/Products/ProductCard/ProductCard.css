@@ -7,6 +7,7 @@
     justify-content:center;
     align-items:center;
     border: 0.1rem solid var(--text-color);
+    max-height: 28rem;
 }
 
 .prod-card-container:hover{

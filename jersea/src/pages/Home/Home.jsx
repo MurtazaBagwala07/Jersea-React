@@ -9,13 +9,9 @@ export function Home(){
     
 
     const categoryHandler=(cat)=>{
-        const newFilter = {
-            'Laliga':false,
-            'Premier League':false,
-            'Serie-A':false,
-            'Ligue-1':false,
-        }
-        dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:newFilter}})
+        
+        console.log(state.filter)
+        dispatch({type:'CLEAR_FILTER'})
         dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:{...state.filter.categories,[cat.categoryName]:true}}})
         navigate('/products')
 
