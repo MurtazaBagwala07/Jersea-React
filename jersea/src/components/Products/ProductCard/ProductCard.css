@@ -1,122 +1,57 @@
 .prod-card-container{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: relative;
-    width:16rem;
+    width:20rem;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    border: 0.1rem solid var(--text-color);
-}
-
-.prod-card-container:hover{
-    border: 0.1rem solid var(--primary-color);
 }
 
 .prod-card-img{
-    height:18rem;
-    width:100%;
+    height:20rem;
 }
 
-.prod-card-details{
-    width:100%;
-    display: flex;
-    justify-content:space-between;
-    align-items:center;
-    padding : 0.5rem 1rem;
-}
-
-.prod-card-name{
-    font-size:1.25rem;
-    font-weight:bold;
+.prod-card-title{
+    padding : 0.25rem;
+    font-size:1rem;
 }
 
 .prod-card-price{
-    font-size:1rem;
-    font-weight:bolder;
-
-}
-
-.prod-card-cat{
-    font-size:1rem;
-    font-weight:bold;
-    color: gray;
-}
-
-.prod-card-instock{
-    font-size:1rem;
-    font-weight:bold;
-}
-
-.stocked{
-    color: var(--online-green);
-}
-
-.out-of-stock{
-    color:var(--alert-red);
-}
-
-.prod-card-btns{
-    width:100%;
-    display: flex;
-    flex-direction:row;
-    gap:0.25rem;
+    font-size:1.25rem;
     padding: 0.25rem;
-    
 }
 
 .prod-card-cartbtn{
+    width:100%;
     outline:none;
-    border: 0.1rem solid var(--primary-color);
+    border: none;
     height:3rem;
     font-size: 1rem;
-    background-color:var(--text-color);
-    color:var(--primary-color);
+    background-color:var(--primary-color);
+    color:var(--text-color);
     cursor: pointer;
     font-family: var(--font);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items:center;
 }
-
-.cartbtn-disabled{
-    border-color:gray;
-    color:gray;
-    cursor:no-drop;
-}
-
 
 .prod-card-cartbtn:hover{
     font-size: 1.25rem;
-    font-weight: bold;
-    background-color:var(--primary-color);
-    color: var(--text-color);
-}
-
-.cartbtn-disabled:hover{
-    border-color:gray;
+    font-weight: bolder;
     background-color:var(--text-color);
-    color:gray;
-    cursor:no-drop;
+    color: var(--primary-color);
 }
 
-.prod-card-rating{
+.prod-card-wishlistbtn{
     position: absolute;
-    font-size: 1rem;
     top: 0;
     right: 0;
     background-color:var(--text-color);
-    color: var(--primary-color);
-    width:4rem;
+    border-radius: 50%;
+    width:2rem;
     height:2rem;
     display: flex;
     justify-content:center;
     align-items:center;
     margin: 0.5rem;
     cursor: pointer;
-}
-
-.wishlisted{
-    color:var(--alert-red);
 }
