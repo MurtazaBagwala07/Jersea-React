@@ -9,15 +9,15 @@ export const Wishlist = () => {
   return (
     <main class="main-content-wishlist">
         <div class="wishlist-title">
-            Wishlist
+            {`${state?.wishlist?.length>0?'Wishlist':'No Items in Wishlist'}`}
         </div>
-        <div class="wishlist-prod-container">
+        {state?.wishlist?.length>0 && <div class="wishlist-prod-container">
             {state?.wishlist?.map((item)=>{
                 return(
                     <ProductCard prod={item}/>
                 )
             })}
-        </div>
+        </div>}
     </main>
   )
 }

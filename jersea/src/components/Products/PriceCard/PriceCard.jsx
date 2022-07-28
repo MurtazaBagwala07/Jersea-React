@@ -12,7 +12,7 @@ export const PriceCard = () => {
                 <div class="cart-summary-title">Price Details</div>
                 <hr/>
                 <div class="cart-summary-price">
-                    <p>Price (2 items)</p>
+                    <p>Price ({state?.cart?.length} items)</p>
                     <p>{totalPrice*2}</p>
                 </div>
                 <div class="cart-summary-discount">
