@@ -27,6 +27,11 @@
     font-size:1.25rem;
 }
 
+.ecom-filter-title{
+    font-size:1.5rem;
+    font-weight: bold;
+}
+
 .ecom-filter-price{
     display: flex;
     flex-direction: column;

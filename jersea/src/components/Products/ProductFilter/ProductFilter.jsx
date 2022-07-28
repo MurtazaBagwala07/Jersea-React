@@ -7,9 +7,10 @@ export const ProductFilter=()=>{
     return(
         <aside className="ecom-filter flex-column">
         <div className="ecom-filter-header">
-            <span>Filter</span>
+            <span className="ecom-filter-title">Filter</span>
             <span className='ecom-filter-clear' onClick={()=>dispatch({type:'CLEAR_FILTER'})}>Clear</span>
         </div>
+        <hr></hr>
         <div className="ecom-filter-price">
             <label for="price">Price</label>
             <input onChange={(e)=>dispatch({type:'FILTER_DATA', payload:{filterName:'priceRange',filterValue:e.target.value}})} min='0' step='500' value={state.filter.priceRange} max='5500' type="range"/>

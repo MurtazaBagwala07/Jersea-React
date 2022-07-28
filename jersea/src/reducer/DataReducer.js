@@ -6,6 +6,7 @@ export const initialState={
         rating:'',
         priceRange:'5500',
         inStock:false,
+        search:'',
         categories:{
             'Laliga':false,
             'Premier League':false,
@@ -35,6 +36,7 @@ export const DataReducer=(state,action) =>{
                         rating:'',
                         priceRange:'5500',
                         inStock:false,
+                        search:'',
                         categories:{
                             'Laliga':false,
                             'Serie-A':false,

@@ -1,3 +1,8 @@
+const searchData=(data,search)=>{
+    return search ? [...data].filter((prod)=>prod.name.toLowerCase().includes(search.toLowerCase())) : [...data]
+}
+
+
 const sortData=(data,sortBy)=>{
     if(sortBy==='LOW_TO_HIGH'){
         return [...data].sort((a, b) => a.price - b.price);
@@ -46,4 +51,4 @@ const priceControl=(data,value)=>{
     return [...data.filter((item)=>Number(item.price)<=Number(value))]
 }
 
-export {sortData,ratingFilter,categoryData,stockCheck,priceControl}
+export {sortData,ratingFilter,categoryData,stockCheck,priceControl,searchData}
