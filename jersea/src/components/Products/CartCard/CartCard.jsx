@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import './CartCard.css'
 import { useAuth, useData } from "../../../hooks";
 import { AddToWishlistCall,RemoveFromWishlistCall,RemoveFromCartService,CartQuantityService } from '../../../Services';
+import {toastHandler} from '../../../utils/utilFilterFunctions'
 
 
 export const CartCard = ({prod}) => {
@@ -11,6 +12,7 @@ export const CartCard = ({prod}) => {
     const removeFromCart =async(prod)=>{
         const resp = await RemoveFromCartService(prod._id,auth.token)
         if(resp.status===201||resp.status===200){
+            toastHandler('success', 'Removed from cart');
             dispatch({
                 type: 'CART_DATA',
                 payload:resp.data.cart
@@ -22,8 +24,10 @@ export const CartCard = ({prod}) => {
         let resp;
         if(prod.qty===1 && type==='decrement'){
             resp= await RemoveFromCartService(prod._id,auth.token)
+            toastHandler('success', 'Removed from cart');
         }else{
             resp=await CartQuantityService(prod._id,auth.token,type)
+            toastHandler('success', 'Product quantity updated');
         }
         if(resp.status===201||resp.status===200){
             dispatch({

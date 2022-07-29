@@ -4,6 +4,7 @@ import './SignIn.css'
 import '../css/main.css'
 import {useAuth} from '../../hooks'
 import { useNavigate } from "react-router-dom";
+import {toastHandler} from '../../utils/utilFilterFunctions'
 
 export const SignIn = () => {
 
@@ -17,12 +18,19 @@ export const SignIn = () => {
 
     const LoginHandler =async(e)=>{
         e.preventDefault();
+
+        if(signIn.email ==='' || signIn.password ===''){
+            toastHandler('warn', 'Enter correct login details');
+            return
+        }
+
         const token =  await LoginService(signIn.email,signIn.password)
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
             localStorage.setItem('userEmail',signIn.email);
             setAuth({...auth, token:token,isAuth:true});
+            toastHandler('success', 'Successfully logged in');
             navigate("/")
         }
     }
@@ -35,6 +43,7 @@ export const SignIn = () => {
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
             setAuth({...auth, token:token,isAuth:true});
+            toastHandler('success', 'Successfully logged in');
             navigate("/")
         }
     }
@@ -51,13 +60,6 @@ export const SignIn = () => {
             <div className="sign-in-password">
                 <label for="password">Password</label>
                 <input onChange={(e)=>setSignIn({...signIn,password:e.target.value})} type="password"/>
-            </div>
-            <div className="sign-in-action">
-                <div className="sign-in-rempass">
-                    <input type="checkbox" id="remPass" name="Remember Password"/>
-                    <label for="remPass"> Remember Me</label>
-                </div>
-                <a className="anchor-reset" href="#">Forgot you password?</a>
             </div>
             <button onClick={(e)=>LoginHandler(e)} className="sign-in-login sign-in-btn">Login</button>
             <button onClick={(e)=>GuestLogin(e)} className="sign-in-login sign-in-btn">Login with test credentials</button>

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import '../../../pages/css/main.css'
 import './ProductCard.css'
 import { useAuth,useData } from "../../../hooks";
+import {toastHandler} from '../../../utils/utilFilterFunctions'
 import { AddToWishlistCall,RemoveFromWishlistCall,AddToCartService,RemoveFromCartService } from '../../../Services';
 
 export const ProductCard=({prod})=>{
@@ -14,6 +15,7 @@ export const ProductCard=({prod})=>{
     const addToWishlist =async(prod)=>{
         const resp=await AddToWishlistCall(prod,auth.token)
         if(resp.status===201||resp.status===200){
+            toastHandler('success', 'Added to wishlist');
             dispatch({
                 type: 'WISHLIST_DATA',
                 payload: resp.data.wishlist
@@ -25,6 +27,7 @@ export const ProductCard=({prod})=>{
     const removeFromWishlist =async(prod)=>{
         const resp = await RemoveFromWishlistCall(prod._id,auth.token)
         if(resp.status===201||resp.status===200){
+            toastHandler('success', 'Removed from wishlist');
             dispatch({
                 type: 'WISHLIST_DATA',
                 payload: resp.data.wishlist
@@ -36,6 +39,7 @@ export const ProductCard=({prod})=>{
     const addToCart=async(prod)=>{
         const resp=await AddToCartService(prod,auth.token)
         if(resp.status===201||resp.status===200){
+            toastHandler('success', 'Added to cart');
             dispatch({
                 type:'CART_DATA',
                 payload: resp.data.cart
@@ -47,6 +51,7 @@ export const ProductCard=({prod})=>{
     const removeFromCart =async(prod)=>{
         const resp = await RemoveFromCartService(prod._id,auth.token)
         if(resp.status===201||resp.status===200){
+            toastHandler('success', 'Removed from cart');
             dispatch({
                 type:'CART_DATA',
                 payload: resp.data.cart

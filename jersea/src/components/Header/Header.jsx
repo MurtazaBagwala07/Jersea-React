@@ -3,6 +3,7 @@ import '../../pages/css/main.css'
 import './Header.css'
 import { useAuth } from '../../hooks';
 import { useNavigate,Link,useLocation } from "react-router-dom";
+import {toastHandler} from '../../utils/utilFilterFunctions'
 import{useData} from '../../hooks'
 
 export const Header=()=>{
@@ -16,6 +17,7 @@ export const Header=()=>{
         localStorage.removeItem('token')
         localStorage.removeItem('isAuth')
         setAuth(initialAuth);
+        toastHandler('success', 'Successfully Logged Out');
         navigate('/sign-in') 
     }
 
