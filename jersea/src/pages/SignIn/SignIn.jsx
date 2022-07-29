@@ -28,7 +28,7 @@ export const SignIn = () => {
 
     const GuestLogin =async(e)=>{
         e.preventDefault();
-        const token =  await LoginService('adarshbalika@gmail.com','adarshbalika')
+        const token =  await LoginService('murtaza@gmail.com','murtaza')
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
