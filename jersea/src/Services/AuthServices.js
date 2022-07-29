@@ -1,4 +1,5 @@
 import axios from "axios";
+import {toastHandler} from '../utils/utilFilterFunctions'
 
 export const LoginService=async(email,password)=>{
     try {
@@ -6,7 +7,6 @@ export const LoginService=async(email,password)=>{
     {
         email, password
     })
-    
     if(response.status===200||response.status===201){
         console.log(response.data)
         return response.data.encodedToken;
@@ -19,7 +19,6 @@ export const LoginService=async(email,password)=>{
 
 export const SignUpService=async(firstName,lastName,email,password)=>{
     
-        console.log('entered function')
         const response =await axios.post('/api/auth/signup',
         {
             firstName, lastName, email, password

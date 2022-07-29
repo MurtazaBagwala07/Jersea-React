@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 const searchData=(data,search)=>{
     return search ? [...data].filter((prod)=>prod.name.toLowerCase().includes(search.toLowerCase())) : [...data]
 }
@@ -51,4 +53,45 @@ const priceControl=(data,value)=>{
     return [...data.filter((item)=>Number(item.price)<=Number(value))]
 }
 
-export {sortData,ratingFilter,categoryData,stockCheck,priceControl,searchData}
+const toastHandler = (type, message) => {
+    if (type === 'error') {
+      toast.error(message, {
+        position: 'bottom-right',
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else if (type === 'warn') {
+      toast.warn(message, {
+        position: 'bottom-right',
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else if (type === 'success') {
+      toast.success(message, {
+        position: 'bottom-right',
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else if (type === 'info') {
+      toast.info(message, {
+        position: 'bottom-right',
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
+
+
+export {sortData,ratingFilter,categoryData,stockCheck,priceControl,searchData,toastHandler}

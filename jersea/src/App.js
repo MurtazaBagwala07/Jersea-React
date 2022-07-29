@@ -1,5 +1,7 @@
 import "./App.css";
 import {Home,ProductPage, SignIn,SignUp,Wishlist,Cart,NotFound,Success} from './pages/index'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {useAuth} from './hooks'
 import { Header } from "./components/index";
 import { Routes, Route } from 'react-router-dom';
@@ -21,6 +23,16 @@ function App() {
   return (
     <>
     <Header/>
+    <ToastContainer 
+      position='bottom-right'
+      autoClose={false}
+      newestOnTop={false}
+      closeOnClick
+      theme='colored'
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+    />
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/products' element={<ProductPage/>}/>

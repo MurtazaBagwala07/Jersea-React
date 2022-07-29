@@ -3,7 +3,7 @@ import './SignUp.css'
 import '../css/main.css'
 import {SignUpService} from '../../Services'
 import { useNavigate } from "react-router-dom";
-
+import {toastHandler} from '../../utils/utilFilterFunctions'
 
 
 export const SignUp = () => {
@@ -22,9 +22,15 @@ export const SignUp = () => {
     const signUpHandler =async(e)=>{
         e.preventDefault();
         const {firstName,lastName,email,password}= signUp;
-        console.log(firstName,lastName,email,password)
+
+        if(firstName===''||lastName===''||email===''||password===''){
+            toastHandler('warn', 'Enter correct details');
+            return
+        }
+
         const token = await SignUpService(firstName,lastName,email,password)
         if(token){
+            toastHandler('success', 'Successfully Signed Up');
             navigate('/sign-in')
         }
     }
@@ -48,12 +54,6 @@ export const SignUp = () => {
             <div className="sign-in-password">
                 <label for="password">Password</label>
                 <input name='password' onChange={(e)=>inputChangeHandler(e)} type="password"/>
-            </div>
-            <div className="sign-in-action">
-                <div class="sign-in-rempass">
-                    <input type="checkbox" id="remPass" name="Remember Password"/>
-                    <label for="remPass"> I accept all the terms and conditions</label>
-                </div>
             </div>
             <button onClick={(e)=>signUpHandler(e)} className="sign-in-login sign-in-btn">Sign Up</button>
             <p onClick={()=>navigate('/sign-in')} className="sign-in-create sign-in-btn">Already have a account</p>
