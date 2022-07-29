@@ -48,7 +48,7 @@ export const SignIn = () => {
             </div>
             <div className="sign-in-password">
                 <label for="password">Password</label>
-                <input onChange={(e)=>setSignIn({...signIn,password:e.target.value})} type="text"/>
+                <input onChange={(e)=>setSignIn({...signIn,password:e.target.value})} type="password"/>
             </div>
             <div className="sign-in-action">
                 <div className="sign-in-rempass">

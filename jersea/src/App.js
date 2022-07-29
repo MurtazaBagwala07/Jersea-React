@@ -1,5 +1,5 @@
 import "./App.css";
-import {Home,ProductPage, SignIn,SignUp,Wishlist,Cart} from './pages/index'
+import {Home,ProductPage, SignIn,SignUp,Wishlist,Cart,NotFound} from './pages/index'
 import {useAuth} from './hooks'
 import { Header } from "./components/index";
 import { Routes, Route } from 'react-router-dom';
@@ -29,6 +29,7 @@ function App() {
       <Route path='/mockman' element={<MockAPI/>} />
       <Route path='/wishlist' element={auth.isAuth?<Wishlist/>:<SignIn/>}/>
       <Route path='/cart' element={auth.isAuth?<Cart/>:<SignIn/>}/>
+      <Route path='*' element={<NotFound/>}></Route>
     </Routes>
     </>
   );
