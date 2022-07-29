@@ -6,7 +6,7 @@ export const GetCartService=async(token)=>{
             headers: { authorization: token }
         })
         if(response.status===200||response.status===201){
-            return response.data.cart;
+            return response;
         }
     } catch (error) {
         

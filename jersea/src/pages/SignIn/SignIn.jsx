@@ -30,6 +30,7 @@ export const SignIn = () => {
     const GuestLogin =async(e)=>{
         e.preventDefault();
         const token =  await LoginService('murtaza@gmail.com','murtaza')
+        console.log(token);
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);

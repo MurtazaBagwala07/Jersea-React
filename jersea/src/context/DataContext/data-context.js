@@ -10,6 +10,7 @@ export const DataContext = createContext();
 export const DataProvider = ({children})=>{
     const [state,dispatch] = useReducer(DataReducer,initialState)
     const {auth}= useAuth();
+    console.log(auth);
     useEffect(()=>{
         (async()=>{
             try {
@@ -53,7 +54,7 @@ export const DataProvider = ({children})=>{
                 })
             }            
         })();
-    },[auth])
+    },[auth.isAuth])
 
 
     return(

@@ -3,6 +3,6 @@ import './Success.css'
 
 export const Success = () => {
   return (
-    <div className='success-page'> Order Successfull Success</div>
+    <div className='success-page'> Order Successfull</div>
   )
 }

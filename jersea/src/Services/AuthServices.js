@@ -8,7 +8,8 @@ export const LoginService=async(email,password)=>{
     })
     
     if(response.status===200||response.status===201){
-        return response.data;
+        console.log(response.data)
+        return response.data.encodedToken;
     }
     } catch (error) {
         console.log(error)
