@@ -21,6 +21,7 @@ export const SignIn = () => {
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
+            localStorage.setItem('userEmail',signIn.email);
             setAuth({...auth, token:token,isAuth:true});
             navigate("/")
         }
@@ -28,7 +29,7 @@ export const SignIn = () => {
 
     const GuestLogin =async(e)=>{
         e.preventDefault();
-        const token =  await LoginService('adarshbalika@gmail.com','adarshbalika')
+        const token =  await LoginService('murtaza@gmail.com','murtaza')
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
@@ -48,7 +49,7 @@ export const SignIn = () => {
             </div>
             <div className="sign-in-password">
                 <label for="password">Password</label>
-                <input onChange={(e)=>setSignIn({...signIn,password:e.target.value})} type="text"/>
+                <input onChange={(e)=>setSignIn({...signIn,password:e.target.value})} type="password"/>
             </div>
             <div className="sign-in-action">
                 <div className="sign-in-rempass">

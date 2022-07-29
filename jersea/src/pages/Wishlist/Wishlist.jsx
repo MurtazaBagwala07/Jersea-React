@@ -1,25 +1,23 @@
 import React from 'react'
 import './Wishlist.css'
 import '../css/main.css'
-import {useWishlist} from '../../hooks'
+import {useData} from '../../hooks'
 import { ProductCard } from '../../components'
 
 export const Wishlist = () => {
-    const {wishlist} = useWishlist()
-    console.log(wishlist)
+    const {state} = useData()
   return (
     <main class="main-content-wishlist">
         <div class="wishlist-title">
-            Wishlist
+            {`${state?.wishlist?.length>0?'Wishlist':'No Items in Wishlist'}`}
         </div>
-        <div class="wishlist-prod-container">
-            {wishlist.wishlist.map((item)=>{
+        {state?.wishlist?.length>0 && <div class="wishlist-prod-container">
+            {state?.wishlist?.map((item)=>{
                 return(
                     <ProductCard prod={item}/>
                 )
             })}
-            
-        </div>
+        </div>}
     </main>
   )
 }

@@ -6,14 +6,16 @@ export const initialState={
         rating:'',
         priceRange:'5500',
         inStock:false,
+        search:'',
         categories:{
             'Laliga':false,
             'Premier League':false,
             'Serie-A':false,
             'Ligue-1':false,
         },
+        cart:[],
+        wishlist:[],
     }
-
 }
 
 export const DataReducer=(state,action) =>{
@@ -34,6 +36,7 @@ export const DataReducer=(state,action) =>{
                         rating:'',
                         priceRange:'5500',
                         inStock:false,
+                        search:'',
                         categories:{
                             'Laliga':false,
                             'Serie-A':false,
@@ -42,6 +45,12 @@ export const DataReducer=(state,action) =>{
                         },
                     }
         }
+
+        case 'CART_DATA':
+            return {...state,cart:action.payload}
+
+        case 'WISHLIST_DATA':
+            return {...state,wishlist:action.payload}
         
          default:
              return state;

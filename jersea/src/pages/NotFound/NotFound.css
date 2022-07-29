@@ -1,0 +1,15 @@
+.page-not-found{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size:3rem;
+    color:var(--primary-color);
+}
+
+.not-found-image{
+    width: 100vw;
+    height: 90vh;
+}
+
