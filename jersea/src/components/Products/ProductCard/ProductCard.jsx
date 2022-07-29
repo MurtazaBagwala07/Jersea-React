@@ -13,8 +13,10 @@ export const ProductCard=({prod})=>{
     const [inCart, setInCart] = useState(false)
 
     const addToWishlist =async(prod)=>{
-        const resp=await AddToWishlistCall(prod,auth.token)
-        if(resp.status===201||resp.status===200){
+        
+        if(auth.isAuth){
+            const resp=await AddToWishlistCall(prod,auth.token)
+            if(resp.status===201||resp.status===200){
             toastHandler('success', 'Added to wishlist');
             dispatch({
                 type: 'WISHLIST_DATA',
@@ -22,41 +24,66 @@ export const ProductCard=({prod})=>{
             })
             setInWishlist(true)
         }
+        }
+        else{
+            toastHandler('error','Login Required')
+        }
+        
     }
+    
 
     const removeFromWishlist =async(prod)=>{
-        const resp = await RemoveFromWishlistCall(prod._id,auth.token)
-        if(resp.status===201||resp.status===200){
-            toastHandler('success', 'Removed from wishlist');
-            dispatch({
-                type: 'WISHLIST_DATA',
-                payload: resp.data.wishlist
-            })
-            setInWishlist(false)
+        if(auth.isAuth){
+            const resp = await RemoveFromWishlistCall(prod._id,auth.token)
+            if(resp.status===201||resp.status===200){
+                toastHandler('success', 'Removed from wishlist');
+                dispatch({
+                    type: 'WISHLIST_DATA',
+                    payload: resp.data.wishlist
+                })
+                setInWishlist(false)
+            }
+        }
+        else{
+            toastHandler('error','Login Required')
         }
     }
 
+
+    
     const addToCart=async(prod)=>{
-        const resp=await AddToCartService(prod,auth.token)
-        if(resp.status===201||resp.status===200){
-            toastHandler('success', 'Added to cart');
-            dispatch({
-                type:'CART_DATA',
-                payload: resp.data.cart
-            })
-            setInCart(true)
-        }    
+        if(auth.isAuth){
+            const resp=await AddToCartService(prod,auth.token)
+            if(resp.status===201||resp.status===200){
+                toastHandler('success', 'Added to cart');
+                dispatch({
+                    type:'CART_DATA',
+                    payload: resp.data.cart
+                })
+                setInCart(true)
+            }            
+        }
+        else{
+            toastHandler('error','Login Required')
+        }
+        
     }
 
     const removeFromCart =async(prod)=>{
-        const resp = await RemoveFromCartService(prod._id,auth.token)
-        if(resp.status===201||resp.status===200){
-            toastHandler('success', 'Removed from cart');
-            dispatch({
-                type:'CART_DATA',
-                payload: resp.data.cart
-            })
-            setInCart(false)
+
+        if(auth.isAuth){
+            const resp = await RemoveFromCartService(prod._id,auth.token)
+            if(resp.status===201||resp.status===200){
+                toastHandler('success', 'Removed from cart');
+                dispatch({
+                    type:'CART_DATA',
+                    payload: resp.data.cart
+                })
+                setInCart(false)
+            }
+        }
+        else{
+            toastHandler('error','Login Required')
         }
     }
 
