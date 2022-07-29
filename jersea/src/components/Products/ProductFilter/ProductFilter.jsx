@@ -7,10 +7,9 @@ export const ProductFilter=()=>{
     return(
         <aside className="ecom-filter flex-column">
         <div className="ecom-filter-header">
-            <span className="ecom-filter-title">Filter</span>
+            <span>Filter</span>
             <span className='ecom-filter-clear' onClick={()=>dispatch({type:'CLEAR_FILTER'})}>Clear</span>
         </div>
-        <hr></hr>
         <div className="ecom-filter-price">
             <label for="price">Price</label>
             <input onChange={(e)=>dispatch({type:'FILTER_DATA', payload:{filterName:'priceRange',filterValue:e.target.value}})} min='0' step='500' value={state.filter.priceRange} max='5500' type="range"/>
@@ -29,7 +28,7 @@ export const ProductFilter=()=>{
             className="filter-label" type="checkbox"/>Premier League</label>
             
             <label for="league"><input 
-            checked={state.filter.categories['Serie-A']}
+            checked={state.filter.categories['Seria-A']}
             onChange={()=>{dispatch({type:'FILTER_DATA' , payload:{filterName:'categories',filterValue:{...state.filter.categories,'Serie-A':!state.filter.categories['Serie-A']}}})}} 
             className="filter-label" type="checkbox"/>Serie-A</label>
             

@@ -7,6 +7,7 @@
 }
 
 .grid4-container{
+    margin-top:3rem;
     padding:0rem 4rem;
 }
 
@@ -44,23 +45,20 @@
 
 .grid-4-image-caption{
     position: absolute;
-    bottom: 1rem;
     display: flex;
     align-items: center;
     justify-items: center;
     color:var(--primary-color);
-    font-family: inherit;
     font-weight: 600;
     font-size: 1.5rem;
     background-color: var(--text-color);
-    border: 0.1rem solid var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding:2rem;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
 .grid-4-image-caption:hover{
-    background-color: var(--primary-color);
-    color:var(--text-color);
+    display:none;
 }
 
 .grid1-container{
@@ -83,11 +81,10 @@
 .grid-1{
     width: 100%;
     background-color:var(--primary-color);
-    height: 40rem;
-    background-image: url('https://www.realmadrid.com/img/cc_1920px/h23544_real_madrid_fw22_-home_group_nd_20220516095750.jpg');
+    height: 30rem;
+    background-image: url('https://www.realmadrid.com/img/horizontalsc_940px/home-jersey_group_alluse2_20190607095934.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    object-fit: cover;
 }
 
 .grid-1-shopbtn{
