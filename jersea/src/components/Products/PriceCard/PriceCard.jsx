@@ -10,8 +10,8 @@ export const PriceCard = () => {
     const deliveryCharges = 200;
     const finalPrice = totalPrice+deliveryCharges;
 
-    const name=localStorage.getItem('userName')
-    const email =localStorage.getItem('userEmail')
+    // const name=localStorage.getItem('userName')
+    // const email =localStorage.getItem('userEmail')
 
     //RAZORPAY INTEGRATION 
     const loadScript = async (url) => {
@@ -52,8 +52,8 @@ export const PriceCard = () => {
                 response.razorpay_payment_id && navigate(`/success`)
             },
             prefill: {
-                name:name,
-                email: email,
+                name:'test',
+                email: 'test@gmail.com',
 
             },
             theme: {

@@ -21,6 +21,7 @@ export const SignIn = () => {
         if(token){
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
+            localStorage.setItem('userEmail',signIn.email);
             setAuth({...auth, token:token,isAuth:true});
             navigate("/")
         }
